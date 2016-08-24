@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/player.js"></script>
+    <meta charset="utf-8">
+    <title>Welcome to Firebase Hosting</title>
+  </head>
+  <body>
+    <nav class="blue">
+      <div class="nav-wrapper">
+        <a class="brand-logo center"><i class="material-icons">insert_photo</i><span id="fbName">InstaFake</span></a>
+        <a hidden href="#" data-activates="mobile-demo" class="button-collapse removeHiddenSingOut"><i class="material-icons">menu</i></a>
+        <ul hidden class="right hide-on-med-and-down removeHiddenSingOut">
+          <li><a class="waves-effect waves-light btn-large blue" onclick="SignOut()"><i class="material-icons left">sentiment_dissatisfied</i>Sign Out</a></li>
+        </ul>
+        <ul hidden class="side-nav removeHiddenSingOut" id="mobile-demo">
+          <li><a class="waves-effect waves-light btn-large blue" onclick="SignOut()"><i class="material-icons left">sentiment_dissatisfied</i>Sign Out</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="empty">
+      <div class="container">
+        <div id="signIn" class="center" style="margin-top: 40%;">
+            <a class="waves-effect waves-light btn-large blue" onclick="SignIn()"><i class="material-icons left">person_add</i>Sign In</a>
+        </div>
+        <div hidden id="removeHiddenCode" class="input-field center col s3">
+          <i class="material-icons prefix">vpn_key</i>
+          <input oninput="queryStartingCode()" style="width:50%" id="userCode" type="tel" class="text validate" maxlength="4">
+          <label for="userCode">Ingresa el código de partida</label>
+        </div>
+        <div hidden id="removeHiddenSend" class="center">
+            <a class="btn-floating btn-large waves-effect waves-light red" onclick="sendPlayer()"><i class="material-icons">play_circle_outline</i></a>
+        </div>
+      </div>
+    </div>
+    <div hidden id="containerGlobo" class="container col s6 top">
+      <div id="globo" class="balloon" onclick="inflar()"></div>
+
+    </div>
+  </body>
+</html>
